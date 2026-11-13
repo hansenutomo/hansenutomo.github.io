@@ -9,66 +9,101 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; transition: background-color 0.3s, color 0.3s; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #0b0f19; color: #f3f4f6; transition: background-color 0.3s ease, color 0.3s ease; }
         h1, h2, h3, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Neo-Brutalist Shadows & Smooth Transitions */
         .neo-shadow {
-            box-shadow: 4px 4px 0px 0px rgba(0, 0, 1, 1);
+            box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .neo-shadow-lg {
-            box-shadow: 6px 6px 0px 0px rgba(0, 0, 1, 1);
+            box-shadow: 6px 6px 0px 0px rgba(255, 255, 255, 1);
         }
         .neo-shadow-sm {
-            box-shadow: 3px 3px 0px 0px rgba(0, 0, 1, 1);
+            box-shadow: 3px 3px 0px 0px rgba(255, 255, 255, 1);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .neo-btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px rgba(0, 0, 1, 1);
+        
+        .neo-shadow:hover, .neo-shadow-sm:hover, .neo-btn:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0px 0px rgba(255, 255, 255, 1);
         }
 
-        /* Dark Mode Overrides */
-        body.dark-mode {
-            background-color: #121212 !important;
-            color: #f3f4f6 !important;
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #FFFDF9 !important;
+            color: #000000 !important;
         }
-        body.dark-mode header {
-            background-color: #18181b !important;
-            border-color: #ffffff !important;
+        body.light-mode header {
+            background-color: #FFFDF9 !important;
+            border-color: rgba(0, 0, 0, 0.2) !important;
         }
-        body.dark-mode .bg-white {
-            background-color: #1f2937 !important;
-            color: #f3f4f6 !important;
-            border-color: #ffffff !important;
+        body.light-mode .bg-\[\#121826\], body.light-mode footer {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
         }
-        body.dark-mode .neo-shadow, 
-        body.dark-mode .neo-shadow-lg, 
-        body.dark-mode .neo-shadow-sm {
-            box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1) !important;
+        body.light-mode .neo-shadow, 
+        body.light-mode .neo-shadow-lg, 
+        body.light-mode .neo-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 1, 1) !important;
         }
-        body.dark-mode .neo-btn:hover {
-            box-shadow: 2px 2px 0px 0px rgba(255, 255, 255, 1) !important;
+        body.light-mode .neo-shadow:hover, body.light-mode .neo-shadow-sm:hover {
+            box-shadow: 7px 7px 0px 0px rgba(0, 0, 1, 1) !important;
         }
-        body.dark-mode footer {
-            border-color: #ffffff !important;
+        body.light-mode .text-neutral-300 {
+            color: #334155 !important;
+        }
+
+        /* Rich Entrance Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        /* Staggered Animation Delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 3.5s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="bg-[#FFFDF9] text-black antialiased selection:bg-[#22c55e] selection:text-black">
+<body class="antialiased selection:bg-[#22c55e] selection:text-black">
 
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 bg-[#FFFDF9] border-b-3 border-black py-4 px-6 md:px-12 transition-colors duration-300">
+    <header class="sticky top-0 z-50 bg-[#0b0f19] border-b-2 border-white/20 py-4 px-6 md:px-12 backdrop-blur-md bg-opacity-90 transition-colors duration-300">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="#" class="font-heading font-extrabold text-lg tracking-wider bg-[#22c55e] text-black px-3 py-1 border-2 border-black neo-shadow-sm">
-                HANSEN.DEV
+            <a href="#" class="font-heading font-extrabold text-xs md:text-sm tracking-wider bg-[#22c55e] text-black px-3 py-1.5 border-2 border-white neo-shadow-sm">
+                Hansen Utomo Gunawan
             </a>
-            <nav class="hidden md:flex items-center gap-4 font-bold text-sm">
-                <a href="#about" class="px-3 py-1.5 border-2 border-black bg-white text-black neo-shadow-sm hover:bg-[#FACC15] transition">About</a>
-                <a href="#experience" class="px-3 py-1.5 border-2 border-black bg-white text-black neo-shadow-sm hover:bg-[#FACC15] transition">Experience</a>
-                <a href="#projects" class="px-3 py-1.5 border-2 border-black bg-white text-black neo-shadow-sm hover:bg-[#FACC15] transition">Projects</a>
-                <a href="#skills" class="px-3 py-1.5 border-2 border-black bg-white text-black neo-shadow-sm hover:bg-[#FACC15] transition">Skills</a>
+            <nav class="hidden md:flex items-center gap-3 font-bold text-sm">
+                <a href="#about" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">About</a>
+                <a href="#experience" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Experience</a>
+                <a href="#projects" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Projects</a>
+                <a href="#skills" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Skills</a>
+                <a href="#socials" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Contact</a>
             </nav>
             <div class="flex items-center gap-2">
-                <button id="themeToggle" class="w-10 h-10 rounded-full border-2 border-black bg-[#EC4899] flex items-center justify-center neo-shadow-sm cursor-pointer hover:translate-x-0.5 hover:translate-y-0.5 transition" aria-label="Toggle Dark Mode">
-                    <i id="themeIcon" class="fa-solid fa-moon text-white text-sm"></i>
+                <button id="themeToggle" class="w-10 h-10 rounded-full border-2 border-white bg-[#FACC15] flex items-center justify-center neo-shadow-sm cursor-pointer hover:scale-105 transition" style="background-color: #FACC15; border-color: #ffffff;" aria-label="Toggle Theme">
+                    <i id="themeIcon" class="fa-solid fa-sun text-black text-sm"></i>
                 </button>
             </div>
         </div>
@@ -77,123 +112,155 @@
     <!-- Hero Section -->
     <section class="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Hero Text (Span 7) -->
-        <div class="lg:col-span-7 space-y-6">
-            <div class="inline-block bg-[#22c55e] text-black border-2 border-black px-4 py-1.5 font-heading font-extrabold text-xs uppercase tracking-wider neo-shadow-sm">
+        <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
+            <div class="inline-block bg-[#22c55e] text-black border-2 border-white px-4 py-1.5 font-heading font-extrabold text-xs uppercase tracking-wider neo-shadow-sm animate-float">
                 Informatics Engineering Graduate
             </div>
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                Hello I'm <br><span class="bg-[#FACC15] text-black px-2 border-2 border-black neo-shadow inline-block mt-2">Hansen Utomo Gunawan</span>
+                Hello I'm <br><span class="bg-[#FACC15] text-black px-3 py-1 border-2 border-white neo-shadow inline-block mt-2">Hansen Utomo Gunawan</span>
             </h1>
-            <p class="text-base md:text-lg font-medium text-neutral-800 dark:text-neutral-300 leading-relaxed max-w-xl">
+            <p class="text-base md:text-lg font-medium text-neutral-300 leading-relaxed max-w-xl">
                 Lulusan S1 Teknik Informatika Universitas Bunda Mulia dengan IPK 3.88. Berfokus pada pengembangan perangkat lunak, riset AI/Machine Learning, dan infrastruktur IT.
             </p>
-            <div class="flex flex-wrap gap-4 text-sm font-bold pt-2">
-                <div class="flex items-center gap-2 bg-white text-black border-2 border-black px-3 py-1.5 neo-shadow-sm">
-                    <i class="fa-solid fa-envelope text-pink-600"></i> hansenutomo@gmail.com
+            <div class="flex flex-wrap gap-3 text-sm font-bold pt-2">
+                <div class="flex items-center gap-2 bg-[#121826] text-white border-2 border-white px-3 py-1.5 neo-shadow-sm">
+                    <i class="fa-solid fa-envelope text-pink-400"></i> hansenutomoo@gmail.com
                 </div>
-                <div class="flex items-center gap-2 bg-white text-black border-2 border-black px-3 py-1.5 neo-shadow-sm">
-                    <i class="fa-solid fa-location-dot text-red-500"></i> Tangerang, Indonesia
+                <div class="flex items-center gap-2 bg-[#121826] text-white border-2 border-white px-3 py-1.5 neo-shadow-sm">
+                    <i class="fa-solid fa-location-dot text-red-400"></i> Tangerang, Indonesia
                 </div>
             </div>
+
+            <!-- Quick Links -->
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+                <a href="https://github.com/hansenutomo" target="_blank" class="w-11 h-11 bg-[#171a21] text-white border-2 border-white neo-shadow-sm flex items-center justify-center text-lg hover:bg-neutral-800 transition" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="w-11 h-11 bg-[#0a66c2] text-white border-2 border-white neo-shadow-sm flex items-center justify-center text-lg hover:bg-[#084e96] transition" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:hansenutomoo@gmail.com" class="w-11 h-11 bg-[#EA4335] text-white border-2 border-white neo-shadow-sm flex items-center justify-center text-lg hover:bg-[#d33426] transition" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
             <div class="flex flex-wrap gap-4 pt-4">
-                <a href="#projects" class="neo-btn px-6 py-3 bg-[#EC4899] text-white font-extrabold border-2 border-black neo-shadow transition">
+                <a href="#projects" class="neo-btn px-6 py-3 bg-[#EC4899] text-white font-extrabold border-2 border-white neo-shadow transition inline-block">
                     View My Work <i class="fa-solid fa-arrow-right ml-1"></i>
                 </a>
-                <a href="https://github.com/hansenutomo" target="_blank" class="neo-btn px-6 py-3 bg-white text-black font-extrabold border-2 border-black neo-shadow transition flex items-center gap-2">
-                    <i class="fa-brands fa-github text-lg"></i> GitHub Profile
+                <a href="#about" class="neo-btn px-6 py-3 bg-[#121826] text-white font-extrabold border-2 border-white neo-shadow transition inline-block">
+                    About Me
                 </a>
             </div>
         </div>
 
-        <!-- Hero Card / Photo Frame (Span 5) with Real Photo -->
-        <div class="lg:col-span-5 relative">
-            <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#38BDF8] border-2 border-black neo-shadow-sm z-10 flex items-center justify-center font-bold text-black">🚀</div>
-            <div class="absolute -bottom-4 -right-4 w-14 h-14 bg-[#EC4899] border-2 border-black neo-shadow-sm z-10 flex items-center justify-center text-white text-xl">⭐</div>
+        <!-- Hero Card / Photo Frame (Span 5) -->
+        <div class="lg:col-span-5 relative animate-fade-in-up delay-200">
+            <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#38BDF8] border-2 border-white neo-shadow-sm z-10 flex items-center justify-center font-bold text-black animate-float">🚀</div>
+            <div class="absolute -bottom-4 -right-4 w-14 h-14 bg-[#EC4899] border-2 border-white neo-shadow-sm z-10 flex items-center justify-center text-white text-xl animate-float" style="animation-delay: 1.5s;">⭐</div>
             
-            <div class="bg-white border-3 border-black neo-shadow-lg p-4 relative bg-[#FFF9E6]">
-                <div class="border-2 border-black bg-black text-white px-3 py-1 text-xs font-mono font-bold flex justify-between items-center mb-3">
+            <div class="bg-[#121826] border-3 border-white neo-shadow-lg p-4 relative">
+                <div class="border-2 border-white bg-black text-white px-3 py-1 text-xs font-mono font-bold flex justify-between items-center mb-3">
                     <span>hansen_profile.jpg</span>
                     <span class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span></span>
                 </div>
-                <!-- Foto Asli Anda Disini -->
-                <div class="h-80 border-2 border-black overflow-hidden bg-neutral-200">
-                    <img src="profile.jpg" alt="Hansen Utomo Gunawan" class="w-full h-full object-cover">
+                <!-- Foto Asli -->
+                <div class="h-80 border-2 border-white overflow-hidden bg-neutral-800">
+                    <img src="profile.jpg" alt="Hansen Utomo Gunawan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="mt-3 pt-3 border-t-2 border-dashed border-black text-xs font-bold font-mono text-center text-black">
+                <div class="mt-3 pt-3 border-t-2 border-dashed border-white text-xs font-bold font-mono text-center text-white">
                     Universitas Bunda Mulia Graduate • GPA 3.88 🏆
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About / Education Section -->
-    <section id="about" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-3 border-black">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-[#38BDF8] text-black border-3 border-black neo-shadow p-8 flex flex-col justify-between">
-                <div>
-                    <span class="bg-black text-white px-3 py-1 text-xs font-mono font-bold">BACKGROUND</span>
-                    <h2 class="text-2xl font-heading font-extrabold mt-4 mb-3">Tentang Saya</h2>
-                    <p class="font-medium text-sm leading-relaxed text-black">
-                        Lulusan S1 Teknik Informatika UBM dengan predikat cemerlang (IPK 3.88). Memiliki pengalaman mendalam dalam pengembangan aplikasi, kecerdasan buatan (NLP & Sentiment Analysis), serta pemeliharaan infrastruktur hardware dan jaringan komputer.
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t-2 border-black flex items-center justify-between text-xs font-bold font-mono">
-                    <span>STATUS</span>
-                    <span class="bg-white text-black px-2 py-1 border border-black">Ready to Work</span>
-                </div>
+    <!-- About Me Section -->
+    <section id="about" class="max-w-6xl mx-auto px-6 md:px-12 py-20 border-t-2 border-white/20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
+                <h2 class="text-3xl md:text-5xl font-heading font-extrabold tracking-tight">
+                    About <span class="text-[#38BDF8]">Me</span>
+                </h2>
+                <div class="w-20 h-2 bg-[#22c55e] mb-6"></div>
+                <p class="text-neutral-300 text-base md:text-lg leading-relaxed">
+                    Hi there! I'm <strong class="text-pink-400">Hansen Utomo Gunawan</strong>, an Informatics Engineering Graduate with a Bachelor's degree from Universitas Bunda Mulia (GPA 3.88). Based in Tangerang, Indonesia, I am passionate about software development, AI/Machine Learning research, and robust IT infrastructure support.
+                </p>
+                <p class="text-neutral-300 text-base md:text-lg leading-relaxed">
+                    I specialize in <span class="text-[#38BDF8] font-bold">Python, Flutter, C# .NET, and modern web technologies</span>. My journey in tech started with curiosity about how systems work and evolved into a dedication for creating scalable software solutions and clean user experiences.
+                </p>
+                <p class="text-neutral-300 text-base md:text-lg leading-relaxed">
+                    When I'm not coding, you'll find me exploring software engineering trends, playing bass guitar with SINGLESEED, or diving into strategic board games and indie video games.
+                </p>
             </div>
 
-            <div class="bg-[#FACC15] text-black border-3 border-black neo-shadow p-8 flex flex-col justify-between">
-                <div>
-                    <span class="bg-black text-white px-3 py-1 text-xs font-mono font-bold">EDUCATION</span>
-                    <h2 class="text-2xl font-heading font-extrabold mt-4 mb-1">Universitas Bunda Mulia</h2>
-                    <p class="text-xs font-mono font-bold mb-3">Sarjana Komputer (S.Kom) - Teknik Informatika</p>
-                    <p class="font-medium text-sm leading-relaxed text-black">
-                        Menyelesaikan studi sarjana dalam waktu cepat dengan pencapaian akademik tinggi (IPK 3.88/4.00) serta aktif dalam riset publikasi jurnal ilmiah.
-                    </p>
+            <!-- Right Cards -->
+            <div class="lg:col-span-5 grid grid-cols-1 gap-6 animate-fade-in-up delay-200">
+                <div class="bg-[#121826] border-3 border-white neo-shadow p-6 flex items-start gap-4 hover:scale-[1.02] transition">
+                    <div class="w-12 h-12 bg-[#FF90E8] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-1">Clean Code & Dev</h3>
+                        <p class="text-xs text-neutral-300 leading-relaxed">Writing maintainable, scalable software solutions that stand the test of time.</p>
+                    </div>
                 </div>
-                <div class="mt-6 pt-4 border-t-2 border-black flex items-center justify-between text-xs font-bold font-mono">
-                    <span>GRADUATION</span>
-                    <span class="bg-white text-black px-2 py-1 border border-black">March 2026</span>
+
+                <div class="bg-[#121826] border-3 border-white neo-shadow p-6 flex items-start gap-4 hover:scale-[1.02] transition">
+                    <div class="w-12 h-12 bg-[#38BDF8] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-1">Problem Solving & AI</h3>
+                        <p class="text-xs text-neutral-300 leading-relaxed">Applying critical thinking and Machine Learning models (such as IndoBERT) for complex analysis.</p>
+                    </div>
+                </div>
+
+                <div class="bg-[#121826] border-3 border-white neo-shadow p-6 flex items-start gap-4 hover:scale-[1.02] transition">
+                    <div class="w-12 h-12 bg-[#22c55e] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-lg text-white mb-1">IT Infrastructure</h3>
+                        <p class="text-xs text-neutral-300 leading-relaxed">Maintaining hardware, network switches, and computer laboratory systems effectively.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-3 border-black">
+    <section id="experience" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
         <div class="flex items-center justify-between mb-10">
-            <h2 class="text-3xl font-heading font-extrabold bg-white text-black border-2 border-black px-4 py-2 neo-shadow">
+            <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 💼 Work Experience
             </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Exp 1 -->
-            <div class="bg-white text-black border-3 border-black neo-shadow p-6 flex flex-col justify-between">
+            <div class="bg-[#121826] text-white border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-start mb-3">
-                        <span class="bg-[#22c55e] text-black border border-black text-xs font-mono font-extrabold px-2 py-1">Nov 2026 - Present</span>
-                        <span class="text-xs font-mono font-bold text-neutral-600">Internship</span>
+                        <span class="bg-[#22c55e] text-black border border-white text-xs font-mono font-extrabold px-2 py-1">Nov 2026 - Present</span>
+                        <span class="text-xs font-mono font-bold text-neutral-400">Internship</span>
                     </div>
                     <h3 class="text-xl font-heading font-extrabold">Layanan Akademik Support Intern</h3>
-                    <p class="text-sm font-bold text-indigo-700 mb-3">Universitas Bunda Mulia Serpong</p>
-                    <p class="text-sm font-medium text-neutral-700 leading-relaxed">
+                    <p class="text-sm font-bold text-[#38BDF8] mb-3">Universitas Bunda Mulia Serpong</p>
+                    <p class="text-sm font-medium text-neutral-300 leading-relaxed">
                         Bertanggung jawab dalam pemeliharaan perangkat keras laboratorium komputer, thin clients, network switches, dan proyektor guna mendukung kelancaran kegiatan operasional akademik.
                     </p>
                 </div>
             </div>
 
-            <!-- Exp 2 -->
-            <div class="bg-white text-black border-3 border-black neo-shadow p-6 flex flex-col justify-between">
+            <div class="bg-[#121826] text-white border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-start mb-3">
-                        <span class="bg-[#38BDF8] text-black border border-black text-xs font-mono font-extrabold px-2 py-1">Feb 2023 - Apr 2026</span>
-                        <span class="text-xs font-mono font-bold text-neutral-600">Full-time</span>
+                        <span class="bg-[#38BDF8] text-black border border-white text-xs font-mono font-extrabold px-2 py-1">Feb 2023 - Apr 2026</span>
+                        <span class="text-xs font-mono font-bold text-neutral-400">Full-time</span>
                     </div>
                     <h3 class="text-xl font-heading font-extrabold">Operational Staff & Sales Rep</h3>
-                    <p class="text-sm font-bold text-indigo-700 mb-3">Toko Sinar Makmur</p>
-                    <p class="text-sm font-medium text-neutral-700 leading-relaxed">
+                    <p class="text-sm font-bold text-[#38BDF8] mb-3">Toko Sinar Makmur</p>
+                    <p class="text-sm font-medium text-neutral-300 leading-relaxed">
                         Mengelola inventaris ritel fisik, pencatatan transaksi penjualan harian, arus kas keuangan, serta memberikan pelayanan pelanggan secara optimal.
                     </p>
                 </div>
@@ -202,16 +269,15 @@
     </section>
 
     <!-- Projects & Research Section -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-3 border-black">
+    <section id="projects" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
         <div class="flex items-center justify-between mb-10">
-            <h2 class="text-3xl font-heading font-extrabold bg-white text-black border-2 border-black px-4 py-2 neo-shadow">
+            <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 🚀 Featured Research & Projects
             </h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <div class="bg-[#FF90E8] text-black border-3 border-black neo-shadow p-6 flex flex-col justify-between">
+            <div class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-black text-white text-xs font-mono font-bold px-2.5 py-1">Sinta 4 Journal</span>
@@ -222,13 +288,12 @@
                         Penelitian skripsi (Techno.com, 2026) menggunakan model IndoBERT, LDA topic modeling, dan Random Oversampling, sukses mencapai rata-rata F1-Score 93.86%.
                     </p>
                 </div>
-                <a href="https://doi.org/10.62411/tc.v25i1.15761" target="_blank" class="neo-btn inline-flex items-center justify-center gap-2 bg-white text-black font-extrabold text-sm py-2 px-4 border-2 border-black neo-shadow-sm transition w-fit">
+                <a href="https://doi.org/10.62411/tc.v25i1.15761" target="_blank" class="neo-btn inline-flex items-center justify-center gap-2 bg-[#121826] text-white font-extrabold text-sm py-2 px-4 border-2 border-white neo-shadow-sm transition w-fit">
                     Baca Jurnal <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
 
-            <!-- Project 2 -->
-            <div class="bg-[#A78BFA] text-black border-3 border-black neo-shadow p-6 flex flex-col justify-between">
+            <div class="bg-[#A78BFA] text-black border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-center mb-3">
                         <span class="bg-black text-white text-xs font-mono font-bold px-2.5 py-1">Indie Game Dev</span>
@@ -239,72 +304,196 @@
                         Pengembangan proyek game indie naratif secara kolaboratif bersama rekan tim di bawah panji Odd Works Production.
                     </p>
                 </div>
-                <span class="text-xs font-mono font-bold bg-white text-black px-3 py-1.5 border-2 border-black w-fit neo-shadow-sm">
-                    Odd Works Production
-                </span>
+                <a href="https://oddworks.itch.io/false-belief" target="_blank" class="neo-btn inline-flex items-center justify-center gap-2 bg-[#121826] text-white font-extrabold text-sm py-2 px-4 border-2 border-white neo-shadow-sm transition w-fit">
+                    Play on Itch.io <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-3 border-black">
+    <section id="skills" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
         <div class="flex items-center justify-between mb-10">
-            <h2 class="text-3xl font-heading font-extrabold bg-white text-black border-2 border-black px-4 py-2 neo-shadow">
+            <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 ⚡ Tech Stack & Tools
             </h2>
         </div>
 
-        <div class="flex flex-wrap gap-3 font-mono font-bold text-sm">
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">Python</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">Flutter & Dart</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">C# .NET</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">JavaScript</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">PHP & Flask</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">SQL & Database</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">Git & GitHub</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">VS Code</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">Android Studio</span>
-            <span class="px-4 py-2 bg-white text-black border-2 border-black neo-shadow-sm hover:bg-[#22c55e] transition">Figma & Canva</span>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div class="bg-[#3776AB] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-python text-4xl text-[#FFD43B]"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">Python</span>
+            </div>
+            <div class="bg-[#02569B] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-solid fa-mobile-screen-button text-4xl text-[#02569B] bg-white p-1 rounded"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">Flutter</span>
+            </div>
+            <div class="bg-[#512BD4] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-solid fa-code text-4xl text-white"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">C# .NET</span>
+            </div>
+            <div class="bg-[#F7DF1E] text-black border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-js text-4xl text-black"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">JavaScript</span>
+            </div>
+            <div class="bg-[#777BB4] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-php text-4xl"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">PHP</span>
+            </div>
+            <div class="bg-[#121826] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-solid fa-flask text-4xl text-[#38BDF8]"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">Flask</span>
+            </div>
+            <div class="bg-[#00758F] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-solid fa-database text-4xl text-[#F29111]"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">SQL DB</span>
+            </div>
+            <div class="bg-[#F05032] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-git-alt text-4xl"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">Git</span>
+            </div>
+            <div class="bg-[#24292e] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-github text-4xl text-white"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">GitHub</span>
+            </div>
+            <div class="bg-[#007ACC] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-solid fa-laptop-code text-4xl"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">VS Code</span>
+            </div>
+            <div class="bg-[#3DDC84] text-black border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-android text-4xl"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">Android St.</span>
+            </div>
+            <div class="bg-[#F24E1E] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
+                <i class="fa-brands fa-figma text-4xl"></i>
+                <span class="font-heading font-extrabold text-sm tracking-wide">Figma</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Socials & Connect Section -->
+    <section id="socials" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
+                🌐 Connect & Socials
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-bold">
+            <!-- Instagram -->
+            <a href="https://instagram.com/hansen.utomo" target="_blank" class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#ff75e3] transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-instagram text-2xl"></i>
+                    <div>
+                        <div class="text-xs font-mono uppercase">Instagram</div>
+                        <div class="text-sm">@hansen.utomo</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
+
+            <!-- Discord -->
+            <a href="https://discord.com/users/277325868722946048" target="_blank" class="bg-[#5865F2] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#4752c4] transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-discord text-2xl"></i>
+                    <div>
+                        <div class="text-xs font-mono uppercase text-indigo-200">Discord</div>
+                        <div class="text-sm">ivquattro</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="bg-[#0a66c2] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#084e96] transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                    <div>
+                        <div class="text-xs font-mono uppercase text-blue-200">LinkedIn</div>
+                        <div class="text-sm">hansen-utomo-gunawan</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
+
+            <!-- Steam -->
+            <a href="https://steamcommunity.com/id/quattro-iv/" target="_blank" class="bg-[#171a21] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-neutral-800 transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-steam text-2xl"></i>
+                    <div>
+                        <div class="text-xs font-mono uppercase text-neutral-400">Steam Profile</div>
+                        <div class="text-sm">quattro-iv</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com/hansenutomogunawan" target="_blank" class="bg-[#3b5998] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#324b82] transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-facebook text-2xl"></i>
+                    <div>
+                        <div class="text-xs font-mono uppercase text-blue-200">Facebook</div>
+                        <div class="text-sm">Hansen Utomo Gunawan</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/" target="_blank" class="bg-[#25D366] text-black border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#20bd5c] transition">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <div>
+                        <div class="text-xs font-mono uppercase">WhatsApp</div>
+                        <div class="text-sm">@hansenutomo</div>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 px-6 md:px-12 border-t-3 border-black mt-20">
+    <footer class="bg-black text-white py-12 px-6 md:px-12 border-t-2 border-white/20 mt-20 transition-colors duration-300">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
                 <h3 class="font-heading font-extrabold text-xl text-[#22c55e]">HANSEN UTOMO GUNAWAN</h3>
                 <p class="text-xs font-mono text-neutral-400 mt-1">Informatics Engineering Graduate • Universitas Bunda Mulia</p>
             </div>
             <div class="flex gap-4">
-                <a href="https://github.com/hansenutomo" target="_blank" class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center font-bold hover:bg-[#22c55e] transition">
+                <a href="https://github.com/hansenutomo" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="mailto:hansenutomo@gmail.com" class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center font-bold hover:bg-[#22c55e] transition">
+                <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:hansenutomoo@gmail.com" class="w-10 h-10 bg-[#121826] text-white border-2 border-white flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
             </div>
         </div>
         <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-neutral-800 text-center text-xs font-mono text-neutral-500">
-            &copy; 2026 Hansen Utomo Gunawan. Built with Neo-Brutalist Design & GitHub Pages.
+            &copy; 2026 Hansen Utomo Gunawan. Built with Dark Neo-Brutalist Design & GitHub Pages.
         </div>
     </footer>
 
-    <!-- Script untuk Dark Mode Toggle -->
+    <!-- Script untuk Toggle Dark / Light Mode -->
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
 
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                themeIcon.className = 'fa-solid fa-sun text-black text-sm';
-                themeToggle.classList.remove('bg-[#EC4899]');
-                themeToggle.classList.add('bg-[#FACC15]');
-            } else {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
                 themeIcon.className = 'fa-solid fa-moon text-white text-sm';
-                themeToggle.classList.remove('bg-[#FACC15]');
-                themeToggle.classList.add('bg-[#EC4899]');
+                themeToggle.style.backgroundColor = '#121826';
+                themeToggle.style.borderColor = '#000000';
+            } else {
+                themeIcon.className = 'fa-solid fa-sun text-black text-sm';
+                themeToggle.style.backgroundColor = '#FACC15';
+                themeToggle.style.borderColor = '#ffffff';
             }
         });
     </script>
