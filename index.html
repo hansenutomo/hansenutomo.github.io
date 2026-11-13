@@ -56,25 +56,17 @@
             color: #334155 !important;
         }
 
-        /* Rich Entrance Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Scroll Animation (Reveal on Scroll) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
         }
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        /* Staggered Animation Delays */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
 
         /* Floating Animation */
         @keyframes float {
@@ -112,7 +104,7 @@
     <!-- Hero Section -->
     <section class="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Hero Text (Span 7) -->
-        <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
+        <div class="lg:col-span-7 space-y-6 reveal">
             <div class="inline-block bg-[#22c55e] text-black border-2 border-white px-4 py-1.5 font-heading font-extrabold text-xs uppercase tracking-wider neo-shadow-sm animate-float">
                 Informatics Engineering Graduate
             </div>
@@ -155,7 +147,7 @@
         </div>
 
         <!-- Hero Card / Photo Frame (Span 5) -->
-        <div class="lg:col-span-5 relative animate-fade-in-up delay-200">
+        <div class="lg:col-span-5 relative reveal">
             <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#38BDF8] border-2 border-white neo-shadow-sm z-10 flex items-center justify-center font-bold text-black animate-float">🚀</div>
             <div class="absolute -bottom-4 -right-4 w-14 h-14 bg-[#EC4899] border-2 border-white neo-shadow-sm z-10 flex items-center justify-center text-white text-xl animate-float" style="animation-delay: 1.5s;">⭐</div>
             
@@ -164,7 +156,7 @@
                     <span>hansen_profile.jpg</span>
                     <span class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span></span>
                 </div>
-                <!-- Foto Asli -->
+                <!-- Foto Asli[cite: 4] -->
                 <div class="h-80 border-2 border-white overflow-hidden bg-neutral-800">
                     <img src="profile.jpg" alt="Hansen Utomo Gunawan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
@@ -178,7 +170,7 @@
     <!-- About Me Section -->
     <section id="about" class="max-w-6xl mx-auto px-6 md:px-12 py-20 border-t-2 border-white/20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div class="lg:col-span-7 space-y-6 animate-fade-in-up">
+            <div class="lg:col-span-7 space-y-6 reveal">
                 <h2 class="text-3xl md:text-5xl font-heading font-extrabold tracking-tight">
                     About <span class="text-[#38BDF8]">Me</span>
                 </h2>
@@ -195,7 +187,7 @@
             </div>
 
             <!-- Right Cards -->
-            <div class="lg:col-span-5 grid grid-cols-1 gap-6 animate-fade-in-up delay-200">
+            <div class="lg:col-span-5 grid grid-cols-1 gap-6 reveal">
                 <div class="bg-[#121826] border-3 border-white neo-shadow p-6 flex items-start gap-4 hover:scale-[1.02] transition">
                     <div class="w-12 h-12 bg-[#FF90E8] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
                         <i class="fa-solid fa-code"></i>
@@ -231,13 +223,13 @@
 
     <!-- Experience Section -->
     <section id="experience" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
-        <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center justify-between mb-10 reveal">
             <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 💼 Work Experience
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
             <div class="bg-[#121826] text-white border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-start mb-3">
@@ -270,13 +262,13 @@
 
     <!-- Projects & Research Section -->
     <section id="projects" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
-        <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center justify-between mb-10 reveal">
             <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 🚀 Featured Research & Projects
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
             <div class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-center mb-3">
@@ -313,13 +305,13 @@
 
     <!-- Skills Section -->
     <section id="skills" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
-        <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center justify-between mb-10 reveal">
             <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 ⚡ Tech Stack & Tools
             </h2>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 reveal">
             <div class="bg-[#3776AB] text-white border-3 border-white neo-shadow p-5 flex flex-col items-center justify-center gap-2 hover:-translate-y-2 transition duration-200">
                 <i class="fa-brands fa-python text-4xl text-[#FFD43B]"></i>
                 <span class="font-heading font-extrabold text-sm tracking-wide">Python</span>
@@ -373,13 +365,13 @@
 
     <!-- Socials & Connect Section -->
     <section id="socials" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
-        <div class="flex items-center justify-between mb-10">
+        <div class="flex items-center justify-between mb-10 reveal">
             <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
                 🌐 Connect & Socials
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-bold">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-bold reveal">
             <!-- Instagram -->
             <a href="https://instagram.com/hansen.utomo" target="_blank" class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#ff75e3] transition">
                 <div class="flex items-center gap-3">
@@ -478,8 +470,9 @@
         </div>
     </footer>
 
-    <!-- Script untuk Toggle Dark / Light Mode -->
+    <!-- Script untuk Toggle Dark/Light Mode & Scroll Reveal Animation -->
     <script>
+        // Toggle Theme
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
@@ -495,6 +488,27 @@
                 themeToggle.style.backgroundColor = '#FACC15';
                 themeToggle.style.borderColor = '#ffffff';
             }
+        });
+
+        // Scroll Reveal Animation (Intersection Observer)
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.12
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 
