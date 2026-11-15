@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hansen Utomo Gunawan - Portfolio</title>
+    <!-- Favicon (Browser Tab Logo) -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -55,6 +57,11 @@
         body.light-mode .text-neutral-300 {
             color: #334155 !important;
         }
+        body.light-mode input, body.light-mode textarea {
+            background-color: #f8fafc !important;
+            color: #000000 !important;
+            border-color: #000000 !important;
+        }
 
         /* Scroll Animation (Reveal on Scroll) */
         .reveal {
@@ -76,6 +83,22 @@
         .animate-float {
             animation: float 3.5s ease-in-out infinite;
         }
+
+        /* Glowing Animation for Quote */
+        @keyframes glowing {
+            0% {
+                text-shadow: 0 0 5px rgba(255, 144, 232, 0.4), 0 0 10px rgba(255, 144, 232, 0.3), 0 0 15px rgba(255, 144, 232, 0.2);
+            }
+            50% {
+                text-shadow: 0 0 10px rgba(255, 144, 232, 0.9), 0 0 20px rgba(255, 144, 232, 0.7), 0 0 30px rgba(255, 144, 232, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 5px rgba(255, 144, 232, 0.4), 0 0 10px rgba(255, 144, 232, 0.3), 0 0 15px rgba(255, 144, 232, 0.2);
+            }
+        }
+        .animate-glow {
+            animation: glowing 3s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-[#22c55e] selection:text-black">
@@ -83,15 +106,19 @@
     <!-- Navbar -->
     <header class="sticky top-0 z-50 bg-[#0b0f19] border-b-2 border-white/20 py-4 px-6 md:px-12 backdrop-blur-md bg-opacity-90 transition-colors duration-300">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="#" class="font-heading font-extrabold text-xs md:text-sm tracking-wider bg-[#22c55e] text-black px-3 py-1.5 border-2 border-white neo-shadow-sm">
-                Hansen Utomo Gunawan
+            <!-- Brand Logo Pill -->
+            <a href="#" class="font-heading font-extrabold text-xs md:text-sm tracking-wider bg-[#121826] text-white px-3 py-1.5 border-2 border-white neo-shadow-sm flex items-center gap-2.5 rounded-full">
+                <span class="w-6 h-6 bg-[#38BDF8] text-black rounded-full flex items-center justify-center text-xs font-bold shrink-0">
+                    <i class="fa-solid fa-compass text-xs"></i>
+                </span>
+                <span>Hansen Utomo Gunawan</span>
             </a>
             <nav class="hidden md:flex items-center gap-3 font-bold text-sm">
                 <a href="#about" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">About</a>
                 <a href="#experience" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Experience</a>
                 <a href="#projects" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Projects</a>
                 <a href="#skills" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Skills</a>
-                <a href="#socials" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Contact</a>
+                <a href="#contact" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Contact</a>
             </nav>
             <div class="flex items-center gap-2">
                 <button id="themeToggle" class="w-10 h-10 rounded-full border-2 border-white bg-[#FACC15] flex items-center justify-center neo-shadow-sm cursor-pointer hover:scale-105 transition" style="background-color: #FACC15; border-color: #ffffff;" aria-label="Toggle Theme">
@@ -112,7 +139,7 @@
                 Hello I'm <br><span class="bg-[#FACC15] text-black px-3 py-1 border-2 border-white neo-shadow inline-block mt-2">Hansen Utomo Gunawan</span>
             </h1>
             <p class="text-base md:text-lg font-medium text-neutral-300 leading-relaxed max-w-xl">
-                Lulusan S1 Teknik Informatika Universitas Bunda Mulia dengan IPK 3.88. Berfokus pada pengembangan perangkat lunak, riset AI/Machine Learning, dan infrastruktur IT.
+                Bachelor of Computer Science (Informatics Engineering) graduate from Universitas Bunda Mulia with a GPA of 3.88. Focused on software development, AI/Machine Learning research, and IT infrastructure.
             </p>
             <div class="flex flex-wrap gap-3 text-sm font-bold pt-2">
                 <div class="flex items-center gap-2 bg-[#121826] text-white border-2 border-white px-3 py-1.5 neo-shadow-sm">
@@ -156,7 +183,7 @@
                     <span>hansen_profile.jpg</span>
                     <span class="flex gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span></span>
                 </div>
-                <!-- Foto Asli[cite: 4] -->
+                <!-- Real Photo -->
                 <div class="h-80 border-2 border-white overflow-hidden bg-neutral-800">
                     <img src="profile.jpg" alt="Hansen Utomo Gunawan" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
@@ -236,24 +263,25 @@
                         <span class="bg-[#22c55e] text-black border border-white text-xs font-mono font-extrabold px-2 py-1">Nov 2026 - Present</span>
                         <span class="text-xs font-mono font-bold text-neutral-400">Internship</span>
                     </div>
-                    <h3 class="text-xl font-heading font-extrabold">Layanan Akademik Support Intern</h3>
+                    <h3 class="text-xl font-heading font-extrabold">Academic Support Services Intern</h3>
                     <p class="text-sm font-bold text-[#38BDF8] mb-3">Universitas Bunda Mulia Serpong</p>
                     <p class="text-sm font-medium text-neutral-300 leading-relaxed">
-                        Bertanggung jawab dalam pemeliharaan perangkat keras laboratorium komputer, thin clients, network switches, dan proyektor guna mendukung kelancaran kegiatan operasional akademik.
+                        Responsible for maintaining computer laboratory hardware, thin clients, network switches, and projectors to ensure smooth academic operational activities.
                     </p>
                 </div>
             </div>
 
+            <!-- Sinar Makmur Part-time -->
             <div class="bg-[#121826] text-white border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
                 <div>
                     <div class="flex justify-between items-start mb-3">
                         <span class="bg-[#38BDF8] text-black border border-white text-xs font-mono font-extrabold px-2 py-1">Feb 2023 - Apr 2026</span>
-                        <span class="text-xs font-mono font-bold text-neutral-400">Full-time</span>
+                        <span class="text-xs font-mono font-bold text-neutral-400">Part-time</span>
                     </div>
                     <h3 class="text-xl font-heading font-extrabold">Operational Staff & Sales Rep</h3>
                     <p class="text-sm font-bold text-[#38BDF8] mb-3">Toko Sinar Makmur</p>
                     <p class="text-sm font-medium text-neutral-300 leading-relaxed">
-                        Mengelola inventaris ritel fisik, pencatatan transaksi penjualan harian, arus kas keuangan, serta memberikan pelayanan pelanggan secara optimal.
+                        Managed physical retail inventory, recorded daily sales transactions, handled financial cash flow, and provided optimal customer service.
                     </p>
                 </div>
             </div>
@@ -269,36 +297,44 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-            <div class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="bg-black text-white text-xs font-mono font-bold px-2.5 py-1">Sinta 4 Journal</span>
-                        <i class="fa-solid fa-scroll text-xl"></i>
+            <!-- Project Card 1 -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] overflow-hidden flex flex-col justify-between">
+                <div class="p-4 bg-neutral-900 border-b-2 border-white relative">
+                    <div class="absolute top-4 left-4 bg-black text-white text-xs font-mono font-bold px-2 py-1 border border-white z-10">WEB APP</div>
+                    <div class="h-52 bg-neutral-800 border-2 border-white overflow-hidden relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 to-purple-950 flex flex-col items-center justify-center p-6 text-center">
+                            <i class="fa-solid fa-scroll text-4xl text-[#38BDF8] mb-3"></i>
+                            <h3 class="font-heading font-extrabold text-lg text-white mb-1">M-Tax Sentiment Analysis</h3>
+                            <p class="text-xs text-neutral-300">IndoBERT & LDA Topic Modeling • F1-Score 93.86%</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-heading font-extrabold mb-2">Analisis Sentimen Multi-Aspek Ulasan M-Pajak</h3>
-                    <p class="text-sm font-medium text-black leading-relaxed mb-6">
-                        Penelitian skripsi (Techno.com, 2026) menggunakan model IndoBERT, LDA topic modeling, dan Random Oversampling, sukses mencapai rata-rata F1-Score 93.86%.
-                    </p>
                 </div>
-                <a href="https://doi.org/10.62411/tc.v25i1.15761" target="_blank" class="neo-btn inline-flex items-center justify-center gap-2 bg-[#121826] text-white font-extrabold text-sm py-2 px-4 border-2 border-white neo-shadow-sm transition w-fit">
-                    Baca Jurnal <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
+                <div class="bg-white text-black p-5 flex items-center justify-between">
+                    <h3 class="font-heading font-extrabold text-xl">M-Tax Analysis</h3>
+                    <a href="https://doi.org/10.62411/tc.v25i1.15761" target="_blank" class="bg-black text-white px-4 py-2 font-bold text-sm border-2 border-black hover:bg-neutral-800 transition flex items-center gap-2">
+                        Read Journal <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="bg-[#A78BFA] text-black border-3 border-white neo-shadow p-6 flex flex-col justify-between hover:scale-[1.01] transition">
-                <div>
-                    <div class="flex justify-between items-center mb-3">
-                        <span class="bg-black text-white text-xs font-mono font-bold px-2.5 py-1">Indie Game Dev</span>
-                        <i class="fa-solid fa-gamepad text-xl"></i>
+            <!-- Project Card 2 -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] overflow-hidden flex flex-col justify-between">
+                <div class="p-4 bg-neutral-900 border-b-2 border-white relative">
+                    <div class="absolute top-4 left-4 bg-black text-white text-xs font-mono font-bold px-2 py-1 border border-white z-10">INDIE GAME</div>
+                    <div class="h-52 bg-neutral-800 border-2 border-white overflow-hidden relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-950 to-pink-950 flex flex-col items-center justify-center p-6 text-center">
+                            <i class="fa-solid fa-gamepad text-4xl text-[#FF90E8] mb-3"></i>
+                            <h3 class="font-heading font-extrabold text-lg text-white mb-1">False Belief</h3>
+                            <p class="text-xs text-neutral-300">Narrative Indie Game by Odd Works Production</p>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-heading font-extrabold mb-2">False Belief</h3>
-                    <p class="text-sm font-medium text-black leading-relaxed mb-6">
-                        Pengembangan proyek game indie naratif secara kolaboratif bersama rekan tim di bawah panji Odd Works Production.
-                    </p>
                 </div>
-                <a href="https://oddworks.itch.io/false-belief" target="_blank" class="neo-btn inline-flex items-center justify-center gap-2 bg-[#121826] text-white font-extrabold text-sm py-2 px-4 border-2 border-white neo-shadow-sm transition w-fit">
-                    Play on Itch.io <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
+                <div class="bg-[#FF90E8] text-black p-5 flex items-center justify-between">
+                    <h3 class="font-heading font-extrabold text-xl">False Belief</h3>
+                    <a href="https://oddworks.itch.io/false-belief" target="_blank" class="bg-black text-white px-4 py-2 font-bold text-sm border-2 border-black hover:bg-neutral-800 transition flex items-center gap-2">
+                        Play on Itch <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -363,116 +399,146 @@
         </div>
     </section>
 
-    <!-- Socials & Connect Section -->
-    <section id="socials" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
-        <div class="flex items-center justify-between mb-10 reveal">
-            <h2 class="text-3xl font-heading font-extrabold bg-[#121826] text-white border-2 border-white px-4 py-2 neo-shadow">
-                🌐 Connect & Socials
-            </h2>
-        </div>
+    <!-- Get In Touch & Send a Message Section -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 md:px-12 py-20 border-t-2 border-white/20">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal">
+            
+            <!-- Left Column: Info & Quick Response -->
+            <div class="lg:col-span-6 space-y-6">
+                <h2 class="text-3xl md:text-5xl font-heading font-extrabold tracking-tight">
+                    Get In <span class="text-[#38BDF8]">Touch</span>
+                </h2>
+                <div class="w-20 h-2 bg-[#22c55e] mb-4"></div>
+                <p class="text-neutral-300 text-base leading-relaxed">
+                    I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities, let's start a conversation!
+                </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-bold reveal">
-            <!-- Instagram -->
-            <a href="https://instagram.com/hansen.utomo" target="_blank" class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#ff75e3] transition">
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-instagram text-2xl"></i>
+                <!-- Contact Cards Stack -->
+                <div class="space-y-4 pt-2">
+                    <!-- Email Card -->
+                    <a href="mailto:hansenutomoo@gmail.com" class="flex items-center gap-4 bg-[#121826] border-3 border-white neo-shadow p-4 hover:translate-x-1 transition">
+                        <div class="w-12 h-12 bg-[#FF90E8] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-mono uppercase text-neutral-400">Email</div>
+                            <div class="text-sm font-bold text-white">hansenutomoo@gmail.com</div>
+                        </div>
+                    </a>
+
+                    <!-- Location Card -->
+                    <div class="flex items-center gap-4 bg-[#121826] border-3 border-white neo-shadow p-4">
+                        <div class="w-12 h-12 bg-[#38BDF8] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-mono uppercase text-neutral-400">Location</div>
+                            <div class="text-sm font-bold text-white">Tangerang, Indonesia</div>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Card -->
+                    <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="flex items-center gap-4 bg-[#121826] border-3 border-white neo-shadow p-4 hover:translate-x-1 transition">
+                        <div class="w-12 h-12 bg-[#22c55e] text-black border-2 border-white flex items-center justify-center font-bold text-xl neo-shadow-sm shrink-0">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs font-mono uppercase text-neutral-400">LinkedIn</div>
+                            <div class="text-sm font-bold text-white">Connect with me</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Quick Response Box -->
+                <div class="bg-[#FF90E8] text-black border-3 border-white neo-shadow p-6 mt-6 flex items-center gap-4">
+                    <span class="text-3xl">💡</span>
                     <div>
-                        <div class="text-xs font-mono uppercase">Instagram</div>
-                        <div class="text-sm">@hansen.utomo</div>
+                        <h4 class="font-heading font-extrabold text-lg">Quick Response!</h4>
+                        <p class="text-xs font-medium font-mono">I typically respond within 24 hours</p>
                     </div>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-            </a>
+            </div>
 
-            <!-- Discord -->
-            <a href="https://discord.com/users/277325868722946048" target="_blank" class="bg-[#5865F2] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#4752c4] transition">
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-discord text-2xl"></i>
-                    <div>
-                        <div class="text-xs font-mono uppercase text-indigo-200">Discord</div>
-                        <div class="text-sm">ivquattro</div>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-            </a>
+            <!-- Right Column: Send a Message Form -->
+            <div class="lg:col-span-6">
+                <div class="bg-[#121826] border-3 border-white neo-shadow-lg p-8 relative">
+                    <h3 class="text-2xl font-heading font-extrabold mb-6 text-white">Send a Message</h3>
+                    
+                    <form action="mailto:hansenutomoo@gmail.com" method="POST" enctype="text/plain" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-mono font-bold uppercase tracking-wider mb-2 text-neutral-300">Your Name *</label>
+                            <input type="text" name="name" required placeholder="John Doe" class="w-full bg-[#0b0f19] border-2 border-white px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#38BDF8]">
+                        </div>
 
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="bg-[#0a66c2] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#084e96] transition">
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-linkedin-in text-2xl"></i>
-                    <div>
-                        <div class="text-xs font-mono uppercase text-blue-200">LinkedIn</div>
-                        <div class="text-sm">hansen-utomo-gunawan</div>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-            </a>
+                        <div>
+                            <label class="block text-xs font-mono font-bold uppercase tracking-wider mb-2 text-neutral-300">Your Email *</label>
+                            <input type="email" name="email" required placeholder="john@example.com" class="w-full bg-[#0b0f19] border-2 border-white px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#38BDF8]">
+                        </div>
 
-            <!-- Steam -->
-            <a href="https://steamcommunity.com/id/quattro-iv/" target="_blank" class="bg-[#171a21] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-neutral-800 transition">
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-steam text-2xl"></i>
-                    <div>
-                        <div class="text-xs font-mono uppercase text-neutral-400">Steam Profile</div>
-                        <div class="text-sm">quattro-iv</div>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-            </a>
+                        <div>
+                            <label class="block text-xs font-mono font-bold uppercase tracking-wider mb-2 text-neutral-300">Your Message *</label>
+                            <textarea name="message" rows="4" required placeholder="Tell me about your project or just say hello! 👋" class="w-full bg-[#0b0f19] border-2 border-white px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#38BDF8]"></textarea>
+                        </div>
 
-            <!-- Facebook -->
-            <a href="https://facebook.com/hansenutomogunawan" target="_blank" class="bg-[#3b5998] text-white border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#324b82] transition">
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-facebook text-2xl"></i>
-                    <div>
-                        <div class="text-xs font-mono uppercase text-blue-200">Facebook</div>
-                        <div class="text-sm">Hansen Utomo Gunawan</div>
-                    </div>
+                        <button type="submit" class="w-full neo-btn py-3.5 bg-[#22c55e] text-black font-extrabold border-2 border-white neo-shadow transition uppercase tracking-wider text-sm flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-            </a>
+            </div>
 
-            <!-- WhatsApp -->
-            <a href="https://wa.me/" target="_blank" class="bg-[#25D366] text-black border-3 border-white neo-shadow p-5 flex items-center justify-between hover:bg-[#20bd5c] transition">
-                <div class="flex items-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    <div>
-                        <div class="text-xs font-mono uppercase">WhatsApp</div>
-                        <div class="text-sm">@hansenutomo</div>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
-            </a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with All Socials & Glowing Quote -->
     <footer class="bg-black text-white py-12 px-6 md:px-12 border-t-2 border-white/20 mt-20 transition-colors duration-300">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- Left Info -->
             <div>
-                <h3 class="font-heading font-extrabold text-xl text-[#22c55e]">HANSEN UTOMO GUNAWAN</h3>
+                <h3 class="font-heading font-extrabold text-xl text-[#38BDF8]">HANSEN UTOMO GUNAWAN</h3>
                 <p class="text-xs font-mono text-neutral-400 mt-1">Informatics Engineering Graduate • Universitas Bunda Mulia</p>
             </div>
-            <div class="flex gap-4">
-                <a href="https://github.com/hansenutomo" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition">
+            
+            <!-- Center Social Icons -->
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <a href="https://github.com/hansenutomo" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition" title="GitHub">
                     <i class="fa-brands fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition">
+                <a href="https://www.linkedin.com/in/hansen-utomo-gunawan" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-[#084e96] hover:text-white transition" title="LinkedIn">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="mailto:hansenutomoo@gmail.com" class="w-10 h-10 bg-[#121826] text-white border-2 border-white flex items-center justify-center font-bold hover:bg-[#22c55e] hover:text-black transition">
+                <a href="https://instagram.com/hansen.utomo" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-[#ff75e3] hover:text-black transition" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/hansenutomogunawan" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-[#3b5998] hover:text-white transition" title="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://discord.com/users/277325868722946048" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-[#5865F2] hover:text-white transition" title="Discord">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+                <a href="https://steamcommunity.com/id/quattro-iv/" target="_blank" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-neutral-800 transition" title="Steam">
+                    <i class="fa-brands fa-steam"></i>
+                </a>
+                <a href="mailto:hansenutomoo@gmail.com" class="w-10 h-10 bg-[#121826] text-white border-2 border-white neo-shadow-sm flex items-center justify-center font-bold hover:bg-[#EA4335] hover:text-white transition" title="Email">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
             </div>
+
+            <!-- Right Copyright -->
+            <div class="text-center md:text-right text-xs font-mono text-neutral-400">
+                <p>Made with <span class="text-pink-500">❤️</span> &copy; 2026</p>
+                <p class="text-neutral-500 mt-1">Built with Tailwind & JS</p>
+            </div>
         </div>
-        <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-neutral-800 text-center text-xs font-mono text-neutral-500">
-            &copy; 2026 Hansen Utomo Gunawan. Built with Dark Neo-Brutalist Design & GitHub Pages.
+
+        <!-- Bottom Quote with Glowing Animation -->
+        <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-neutral-800 text-center font-heading text-sm text-[#FF90E8] tracking-wider animate-glow">
+            "life sometimes needs a little surprise" ✨
         </div>
     </footer>
 
-    <!-- Script untuk Toggle Dark/Light Mode & Scroll Reveal Animation -->
+    <!-- Script for Toggle Dark/Light Mode & Scroll Reveal Animation -->
     <script>
-        // Toggle Theme
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
@@ -490,7 +556,6 @@
             }
         });
 
-        // Scroll Reveal Animation (Intersection Observer)
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
                 root: null,
