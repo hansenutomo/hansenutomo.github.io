@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hansen Utomo Gunawan - Portfolio</title>
-    <!-- Favicon (Browser Tab Logo) -->
-    <link rel="icon" type="image/jpeg" href="logo.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="profile.jpg">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -117,6 +117,7 @@
                 <a href="#about" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">About</a>
                 <a href="#experience" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Experience</a>
                 <a href="#projects" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Projects</a>
+                <a href="#certifications" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Certifications</a>
                 <a href="#skills" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Skills</a>
                 <a href="#contact" class="px-3 py-1.5 border-2 border-white bg-[#121826] text-white neo-shadow-sm hover:bg-[#FACC15] hover:text-black transition">Contact</a>
             </nav>
@@ -339,6 +340,312 @@
         </div>
     </section>
 
+    <!-- My Certifications Section (Click to preview, single Verify button) -->
+    <section id="certifications" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold tracking-tight">
+                My <span class="text-[#38BDF8]">Certifications</span>
+            </h2>
+            <p class="text-neutral-300 text-sm md:text-base mt-2 max-w-xl mx-auto">
+                Continuous Learning Journey - Professional certifications that validate my expertise across cybersecurity, data science, cloud, and programming. Click any certificate image to preview.
+            </p>
+            <div class="w-24 h-1 bg-[#22c55e] mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+            
+            <!-- Cert 1: Cybersecurity Fundamentals Associate (OCFA) -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#38BDF8] text-black p-6 border-b-3 border-white relative">
+                        <div class="absolute top-4 right-4 bg-black text-white w-10 h-10 border-2 border-white neo-shadow-sm flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl leading-snug pr-8 mb-2">Cybersecurity Fundamentals (OCFA)</h3>
+                        <p class="text-xs font-mono font-bold uppercase tracking-wider mb-2">OPSWAT Academy</p>
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                            <i class="fa-regular fa-calendar"></i> Nov 2026 - Oct 2027
+                        </div>
+                    </div>
+                    <!-- Certificate Image Thumbnail (Click to Preview) -->
+                    <div class="p-6 pb-0">
+                        <div class="h-44 bg-black border-2 border-white overflow-hidden relative group cursor-pointer neo-shadow-sm" onclick="openModal('cert1.png', 'Cybersecurity Fundamentals Associate (OCFA)')">
+                            <img src="cert1.png" alt="OCFA Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+cert1.png'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-white font-bold text-xs">
+                                <span class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center text-lg neo-shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </span>
+                            </div>
+                            <span class="absolute top-2 right-2 bg-green-500 text-black text-[10px] font-mono font-extrabold px-2 py-0.5 border border-black">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 pt-4">
+                        <p class="text-sm text-neutral-300 leading-relaxed">
+                            Gained essential knowledge in critical infrastructure protection, threat prevention, malware analysis concepts, and enterprise-grade security standards.
+                        </p>
+                        <div>
+                            <p class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-2">Skills Covered:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Cybersecurity</span>
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Threat Intelligence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t-3 border-white bg-black">
+                    <a href="https://learn.opswatacademy.com/certificate/TnDkSks2-Q" target="_blank" class="w-full neo-btn py-2.5 bg-[#38BDF8] text-black font-extrabold border-2 border-black neo-shadow-sm transition uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert 2: Machine Learning with Python -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#FACC15] text-black p-6 border-b-3 border-white relative">
+                        <div class="absolute top-4 right-4 bg-black text-white w-10 h-10 border-2 border-white neo-shadow-sm flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl leading-snug pr-8 mb-2">Machine Learning with Python</h3>
+                        <p class="text-xs font-mono font-bold uppercase tracking-wider mb-2">IBM</p>
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                            <i class="fa-regular fa-calendar"></i> November 2026
+                        </div>
+                    </div>
+                    <!-- Certificate Image Thumbnail (Click to Preview) -->
+                    <div class="p-6 pb-0">
+                        <div class="h-44 bg-black border-2 border-white overflow-hidden relative group cursor-pointer neo-shadow-sm" onclick="openModal('cert2.png', 'Machine Learning with Python - IBM')">
+                            <img src="cert2.png" alt="Machine Learning Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+cert2.png'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-white font-bold text-xs">
+                                <span class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center text-lg neo-shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </span>
+                            </div>
+                            <span class="absolute top-2 right-2 bg-green-500 text-black text-[10px] font-mono font-extrabold px-2 py-0.5 border border-black">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 pt-4">
+                        <p class="text-sm text-neutral-300 leading-relaxed">
+                            Hands-on experience in regression, classification, clustering, and deep learning basics using Scikit-Learn, Pandas, and NumPy to build predictive models.
+                        </p>
+                        <div>
+                            <p class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-2">Skills Covered:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Machine Learning</span>
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t-3 border-white bg-black">
+                    <a href="https://courses.cognitiveclass.ai/certificates/1d9cc52f696b47298936e748ed66c9d4" target="_blank" class="w-full neo-btn py-2.5 bg-[#FACC15] text-black font-extrabold border-2 border-black neo-shadow-sm transition uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert 3: Intro to Containers, Kubernetes & OpenShift -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#FF90E8] text-black p-6 border-b-3 border-white relative">
+                        <div class="absolute top-4 right-4 bg-black text-white w-10 h-10 border-2 border-white neo-shadow-sm flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl leading-snug pr-8 mb-2">Containers, Kubernetes & OpenShift</h3>
+                        <p class="text-xs font-mono font-bold uppercase tracking-wider mb-2">IBM</p>
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                            <i class="fa-regular fa-calendar"></i> November 2026
+                        </div>
+                    </div>
+                    <!-- Certificate Image Thumbnail (Click to Preview) -->
+                    <div class="p-6 pb-0">
+                        <div class="h-44 bg-black border-2 border-white overflow-hidden relative group cursor-pointer neo-shadow-sm" onclick="openModal('cert3.png', 'Containers, Kubernetes, and OpenShift - IBM')">
+                            <img src="cert3.png" alt="Kubernetes Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+cert3.png'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-white font-bold text-xs">
+                                <span class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center text-lg neo-shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </span>
+                            </div>
+                            <span class="absolute top-2 right-2 bg-green-500 text-black text-[10px] font-mono font-extrabold px-2 py-0.5 border border-black">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 pt-4">
+                        <p class="text-sm text-neutral-300 leading-relaxed">
+                            Covered cloud-native infrastructure technologies, containerization concepts, Kubernetes cluster orchestration, and Red Hat OpenShift deployment.
+                        </p>
+                        <div>
+                            <p class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-2">Skills Covered:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Kubernetes</span>
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">OpenShift</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t-3 border-white bg-black">
+                    <a href="https://courses.cognitiveclass.ai/certificates/159819c3eab44a2caf7ffc8916eafa70" target="_blank" class="w-full neo-btn py-2.5 bg-[#FF90E8] text-black font-extrabold border-2 border-black neo-shadow-sm transition uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert 4: Python 101 for Data Science -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#22c55e] text-black p-6 border-b-3 border-white relative">
+                        <div class="absolute top-4 right-4 bg-black text-white w-10 h-10 border-2 border-white neo-shadow-sm flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl leading-snug pr-8 mb-2">Python 101 for Data Science</h3>
+                        <p class="text-xs font-mono font-bold uppercase tracking-wider mb-2">IBM</p>
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                            <i class="fa-regular fa-calendar"></i> November 2026
+                        </div>
+                    </div>
+                    <!-- Certificate Image Thumbnail (Click to Preview) -->
+                    <div class="p-6 pb-0">
+                        <div class="h-44 bg-black border-2 border-white overflow-hidden relative group cursor-pointer neo-shadow-sm" onclick="openModal('cert4.png', 'Python 101 for Data Science - IBM')">
+                            <img src="cert4.png" alt="Python Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+cert4.png'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-white font-bold text-xs">
+                                <span class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center text-lg neo-shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </span>
+                            </div>
+                            <span class="absolute top-2 right-2 bg-green-500 text-black text-[10px] font-mono font-extrabold px-2 py-0.5 border border-black">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 pt-4">
+                        <p class="text-sm text-neutral-300 leading-relaxed">
+                            Foundational training in Python programming tailored for data science, covering core concepts, data structures (lists, tuples, dictionaries), and analysis libraries.
+                        </p>
+                        <div>
+                            <p class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-2">Skills Covered:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Python</span>
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Data Structures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t-3 border-white bg-black">
+                    <a href="https://courses.cognitiveclass.ai/certificates/f6412a2dfe104cceb7d6387320b1f5e5" target="_blank" class="w-full neo-btn py-2.5 bg-[#22c55e] text-black font-extrabold border-2 border-black neo-shadow-sm transition uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert 5: Networking Basics & IT Support -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#38BDF8] text-black p-6 border-b-3 border-white relative">
+                        <div class="absolute top-4 right-4 bg-black text-white w-10 h-10 border-2 border-white neo-shadow-sm flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl leading-snug pr-8 mb-2">Networking & IT Support Basics</h3>
+                        <p class="text-xs font-mono font-bold uppercase tracking-wider mb-2">Cisco Networking Academy</p>
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                            <i class="fa-regular fa-calendar"></i> November 2026
+                        </div>
+                    </div>
+                    <!-- Certificate Image Thumbnail (Click to Preview) -->
+                    <div class="p-6 pb-0">
+                        <div class="h-44 bg-black border-2 border-white overflow-hidden relative group cursor-pointer neo-shadow-sm" onclick="openModal('cert5.png', 'Networking & IT Support Basics - Cisco')">
+                            <img src="cert5.png" alt="Networking Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+cert5.png'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-white font-bold text-xs">
+                                <span class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center text-lg neo-shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </span>
+                            </div>
+                            <span class="absolute top-2 right-2 bg-green-500 text-black text-[10px] font-mono font-extrabold px-2 py-0.5 border border-black">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 pt-4">
+                        <p class="text-sm text-neutral-300 leading-relaxed">
+                            Learned computer networking operations, network design fundamentals, and developed help desk and customer support skills for IT environment troubleshooting.
+                        </p>
+                        <div>
+                            <p class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-2">Skills Covered:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Networking</span>
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Help Desk Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t-3 border-white bg-black">
+                    <a href="https://www.netacad.com/recognitions/verify/e08d5f97-6c57-4cd0-bac6-7ce9bb7b9dc6" target="_blank" class="w-full neo-btn py-2.5 bg-[#38BDF8] text-black font-extrabold border-2 border-black neo-shadow-sm transition uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cert 6: CertNexus AIBIZ -->
+            <div class="border-3 border-white neo-shadow bg-[#121826] flex flex-col justify-between">
+                <div>
+                    <div class="bg-[#FACC15] text-black p-6 border-b-3 border-white relative">
+                        <div class="absolute top-4 right-4 bg-black text-white w-10 h-10 border-2 border-white neo-shadow-sm flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-xl leading-snug pr-8 mb-2">CertNexus AIBIZ (AI Business)</h3>
+                        <p class="text-xs font-mono font-bold uppercase tracking-wider mb-2">CertNexus</p>
+                        <div class="flex items-center gap-2 text-xs font-mono font-bold">
+                            <i class="fa-regular fa-calendar"></i> July 2025
+                        </div>
+                    </div>
+                    <!-- Certificate Image Thumbnail (Click to Preview) -->
+                    <div class="p-6 pb-0">
+                        <div class="h-44 bg-black border-2 border-white overflow-hidden relative group cursor-pointer neo-shadow-sm" onclick="openModal('cert6.png', 'CertNexus AIBIZ Certification')">
+                            <img src="cert6.png" alt="AIBIZ Certificate" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+cert6.png'">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2 text-white font-bold text-xs">
+                                <span class="w-10 h-10 bg-white text-black border-2 border-black flex items-center justify-center text-lg neo-shadow-sm">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </span>
+                            </div>
+                            <span class="absolute top-2 right-2 bg-green-500 text-black text-[10px] font-mono font-extrabold px-2 py-0.5 border border-black">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4 pt-4">
+                        <p class="text-sm text-neutral-300 leading-relaxed">
+                            Validated understanding of AI concepts, business value generation, and practical applications in corporate environments.
+                        </p>
+                        <div>
+                            <p class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-2">Skills Covered:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">Artificial Intelligence</span>
+                                <span class="bg-[#0b0f19] text-white border border-white text-xs px-2.5 py-1 font-mono">AI Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t-3 border-white bg-black">
+                    <a href="https://certifications.certnexus.com/f198b6fd-c877-4bb0-aadb-5e708598d902#acc.EFT8DktA" target="_blank" class="w-full neo-btn py-2.5 bg-[#FACC15] text-black font-extrabold border-2 border-black neo-shadow-sm transition uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Certificate Image Lightbox Modal -->
+    <div id="certModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-[#121826] border-3 border-white neo-shadow-lg max-w-3xl w-full p-6 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-red-500 text-white font-bold border-2 border-white neo-shadow-sm flex items-center justify-center hover:bg-red-600 transition cursor-pointer z-10">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 id="modalTitle" class="font-heading font-extrabold text-xl text-white mb-4 pr-12">Certificate Preview</h3>
+            <div class="border-2 border-white bg-black p-2 flex items-center justify-center max-h-[70vh] overflow-auto">
+                <img id="modalImg" src="" alt="Certificate Preview" class="max-h-[65vh] object-contain">
+            </div>
+            <div class="mt-6 flex justify-between items-center">
+                <span class="text-xs font-mono text-neutral-400"><i class="fa-solid fa-shield-check text-green-400"></i> Official Verified Credential</span>
+                <button onclick="closeModal()" class="neo-btn px-6 py-2.5 bg-[#FF90E8] text-black font-extrabold border-2 border-black text-xs uppercase tracking-wider neo-shadow-sm">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Skills Section -->
     <section id="skills" class="max-w-6xl mx-auto px-6 md:px-12 py-16 border-t-2 border-white/20">
         <div class="flex items-center justify-between mb-10 reveal">
@@ -537,7 +844,7 @@
         </div>
     </footer>
 
-    <!-- Script for Toggle Dark/Light Mode & Scroll Reveal Animation -->
+    <!-- Script for Toggle Dark/Light Mode, Scroll Reveal, & Modal Lightbox -->
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
@@ -553,6 +860,24 @@
                 themeIcon.className = 'fa-solid fa-sun text-black text-sm';
                 themeToggle.style.backgroundColor = '#FACC15';
                 themeToggle.style.borderColor = '#ffffff';
+            }
+        });
+
+        // Modal Lightbox Functions
+        function openModal(imgSrc, title) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('certModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('certModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside content
+        document.getElementById('certModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
             }
         });
 
